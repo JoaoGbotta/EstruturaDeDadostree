@@ -65,13 +65,20 @@ public class Stack {
         height++;
     }
 
+    //metodos de remoção
 
+    public Node pop(){
+        if (height == 0)
+            return null;
 
+        Node temp = top;
+        top = top.next;
+        temp.next = null;
+        height--;
 
+        return temp;
 
-
-
-
+    }
 
 
     public static void main(String[] args) {
@@ -79,8 +86,17 @@ public class Stack {
 
 // criar pilha para codar.
         Stack myStack = new Stack(2);
+        myStack.push(1);
 
-        myStack.getTop();
+        System.out.println(myStack.pop().value);
+        System.out.println(myStack.pop().value);
+
+        System.out.println(myStack.pop() == null);
+
+
+
+
+      /*  myStack.getTop();
         myStack.getHeigth();
         myStack.print();
 
@@ -89,7 +105,7 @@ public class Stack {
         myStack.print();
         myStack.getTop();
         myStack.getHeigth();
-
+*/
     }
 
 
