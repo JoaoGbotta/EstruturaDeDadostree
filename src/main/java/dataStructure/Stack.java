@@ -51,18 +51,44 @@ public class Stack {
             temp=temp.next;
         }
         System.out.println("####################");
-
     }
+    // metodo push (inserir)
+
+    public void push(int value){
+        Node newNode = new Node(value);
+        if (height == 0 ){
+            top = newNode;
+        } else {
+            newNode.next = top;
+            top = newNode;
+        }
+        height++;
+    }
+
+
+
+
+
+
+
+
+
 
     public static void main(String[] args) {
 
 
 // criar pilha para codar.
-        Stack myStack = new Stack(4);
+        Stack myStack = new Stack(2);
 
         myStack.getTop();
         myStack.getHeigth();
         myStack.print();
+
+        myStack.push(1);
+
+        myStack.print();
+        myStack.getTop();
+        myStack.getHeigth();
 
     }
 
